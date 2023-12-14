@@ -148,7 +148,7 @@ add an entry with a root mode of `js-mode' and dedicated mode of `js2-mode'"
           "\\|\\(?:\\s-+module\\)"            ; The optional "module" attribute
           "\\|\\(?:\\s-+setup\\)"             ; The optional "setup" attribute
           "\\)*"
-          " *>\n")                            ; The end of the tag
+          "\\s-*>\n")                         ; The end of the tag
   "A regular expression for the starting tags of template areas with languages.
 To be formatted with the tag name, and the language.")
 
