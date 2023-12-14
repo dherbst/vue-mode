@@ -153,14 +153,15 @@ add an entry with a root mode of `js-mode' and dedicated mode of `js2-mode'"
 To be formatted with the tag name, and the language.")
 
 (defconst vue--front-tag-regex
-  (concat "<%s"                        ; The tag name
-          "\\(?:"                      ; Zero of more of...
+  (concat "<%s"                         ; The tag name
+          "\\(?:"                       ; Zero of more of...
           "\\(?:\\s-+" vue--not-lang-key "[\"'][^\"']*?[\"']\\)" ; Any optional key-value pairs like type="foo/bar".
           ;; ^ Disallow "lang" in k/v pairs to avoid matching regions with non-default languages
           "\\|\\(?:\\s-+scoped\\)"      ; The optional "scoped" attribute
           "\\|\\(?:\\s-+module\\)"      ; The optional "module" attribute
+          "\\|\\(?:\\s-+setup\\)"       ; The optional "setup" attribute
           "\\)*"
-          "\\s-*>\n")                     ; The end of the tag
+          "\\s-*>\n")                   ; The end of the tag
   "A regular expression for the starting tags of template areas.
 To be formatted with the tag name.")
 
