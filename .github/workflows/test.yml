@@ -1,6 +1,11 @@
 name: Tests
 
 on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -33,4 +38,9 @@ jobs:
         with:
           version: snapshot
       - run: echo "$HOME/.cask/bin" >> $GITHUB_PATH
+<<<<<<< HEAD
+=======
+      - name: Install dependencies
+        run: cask install
+>>>>>>> fix-replace-travis
       - run: cask exec ert-runner
