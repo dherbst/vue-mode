@@ -33,4 +33,6 @@ jobs:
         with:
           version: snapshot
       - run: echo "$HOME/.cask/bin" >> $GITHUB_PATH
+      - name: Install dependencies
+        run: cask install
       - run: cask exec ert-runner
