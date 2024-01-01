@@ -39,8 +39,13 @@ jobs:
           version: snapshot
       - run: echo "$HOME/.cask/bin" >> $GITHUB_PATH
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       - name: Install dependencies
         run: cask install
 >>>>>>> fix-replace-travis
+=======
+      - name: Install dependencies
+        run: cask install
+>>>>>>> upstream/master
       - run: cask exec ert-runner
